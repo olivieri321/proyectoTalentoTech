@@ -238,12 +238,17 @@ footer ul{
     grid-template-rows: 1fr 1fr;
     padding: 1%;
 }
-#reseñas card {
+#reseñas card{
     background-color: rgba(0, 0, 0, 0.500);
     color: white;
     border-radius: 10%;
     width: 70%;
     margin-left: 15%;
+}
+
+#reseñas card img{
+    width: 80%;
+    padding: 5%;
 }
 
 @media (max-width: 1444px) {
