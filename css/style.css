@@ -185,9 +185,9 @@ body{
     border: 1px solid rgba(0, 0, 0, 0.473);
 }
 #formContacto{
-    margin-top: 100px;
+    margin-top: 40px;
     margin-left: 30%;
-    margin-bottom: 33%;
+    margin-bottom: 5%;
     width: 40%;
     background-color: var(--colorterceario);
 }
@@ -232,20 +232,12 @@ footer ul{
 }
 
 #reseñas{
+    margin-top: 20px;
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     padding: 1%;
-}
-
-#reseñas div{
-    background-color: #000000;
-    border-radius: 5%;
-    text-align: center;
-    grid-column: span 4;
-    grid-row: span 1;
-    color: white;
 }
 #reseñas card{
     background-color: rgba(0, 0, 0, 0.500);
@@ -254,10 +246,6 @@ footer ul{
     text-align: center;
     width: 70%;
     margin-left: 15%;
-}
-
-#reseñas card div p{
-    background-color: #000000;
 }
 
 #reseñas card img{
@@ -410,10 +398,6 @@ footer ul{
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         padding: 1%;
-    }
-    #reseñas div{
-        grid-column: span 2;
-        grid-row: span 1;
     }
 
 }
