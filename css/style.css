@@ -118,6 +118,10 @@ body{
     padding-right: 5%;
 }
 
+#categoriasPC ul li h3 a{
+    text-decoration: none;
+}
+
 .tarjetaProducto{
     margin: 2%;
     width: 80%;
