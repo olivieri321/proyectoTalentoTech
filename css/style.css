@@ -111,6 +111,7 @@ body{
     width: auto;
     height: auto;
     background-color: var(--colorterceario);
+    justify-content: center;
 }
 .tarjetaProducto{
     margin: 2%;
