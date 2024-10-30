@@ -173,15 +173,6 @@ body{
     background-color: var(--colorsecundario);
     
 }
-.tarjetaOpinion{
-    margin: 5%;
-    width: 90%;
-    background-color: #1C3D5A;
-    color: white;
-    border-radius: 2%;
-    font-size: small;
-    border: 1px solid rgba(0, 0, 0, 0.473);
-}
 #formContacto{
     margin-top: 40px;
     margin-left: 30%;
@@ -243,7 +234,8 @@ footer ul{
     border-radius: 10%;
     text-align: center;
     width: 70%;
-    margin-left: 15%;
+    margin: 5%;
+    
 }
 
 #reseñas card img{
