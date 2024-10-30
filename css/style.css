@@ -242,8 +242,13 @@ footer ul{
     background-color: rgba(0, 0, 0, 0.500);
     color: white;
     border-radius: 10%;
+    text-align: center;
     width: 70%;
     margin-left: 15%;
+}
+
+#reseñas card div p{
+    background-color: #000000;
 }
 
 #reseñas card img{
