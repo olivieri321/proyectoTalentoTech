@@ -111,8 +111,13 @@ body{
     width: auto;
     height: auto;
     background-color: var(--colorterceario);
-    justify-content: center;
 }
+
+#categoriasPC ul{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
 .tarjetaProducto{
     margin: 2%;
     width: 80%;
