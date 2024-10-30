@@ -231,6 +231,17 @@ footer ul{
     text-decoration: none;
 }
 
+#reseñas{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+#reseñas card {
+    background-color: rgba(0, 0, 0, 0.500);
+    color: white;
+}
+
 @media (max-width: 1444px) {
     /*footer*/
     footer ul{
