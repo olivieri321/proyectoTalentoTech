@@ -1,0 +1,364 @@
+/* posible paleta: 545f66, 829399, d0f4ea, 0d0221, b8b42d*/
+
+:root{
+    --colorprimario: #302a44;
+    --colorsecundario: #070f16;
+    --colorterceario: #A4C639;
+    --colorcuaternario: #E0E0E0;
+}
+
+*{
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+    font-family:Montserrat;
+}
+/*Estilos inicio*/
+
+#introTiendabackground{
+    height: 600px;
+    background-image: url("../img/rtx4090Inicio.png");
+    background-size: cover;
+}
+.panelintroTienda{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.596);
+}
+
+.introtienda{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    background-color: #000000b9;
+    height: 300px;
+    width: 40%;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+#descripcionIntroSponsors{
+    overflow-Y: hidden;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--colorterceario);
+    height: 100px;
+}
+#descripcionIntroSponsors img{
+    width: 20%;
+}
+#introproductosbackground{
+    background-image: url("../img/ryzenInicio.jpg");
+    background-size: cover;
+}
+
+/**/
+
+body{
+    background-color: var(--colorprimario);
+}
+#banner{
+    background-color: var(--colorsecundario);
+    height: 50px;
+    color: white;
+    text-align: center;
+}
+#formularioContacto{
+    margin-left: 30%;
+    display: block;
+    background-color: #D0F4EA;
+    border-radius: 1%;
+    border: #1C3D5A;
+    width: 40%;
+}
+#menu {
+    background-color:var(--colorsecundario);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+}
+
+#menu div{
+    justify-content: center;
+}
+#menu div h3 a {
+    margin-left: 33.3333%;
+    width: auto;
+    height: auto;
+    text-decoration: none;
+    color:#D0F4EA ;
+}
+#menu div h3 a:hover{
+    transition-duration: 400ms;
+    color: #B8B42D;
+}
+
+#tienda {
+    background-color: var(--colorprimario);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0.5%;
+}
+#categoriasPC{
+    grid-row: span 3;
+    width: auto;
+    height: auto;
+    background-color: var(--colorterceario);
+}
+.tarjetaProducto{
+    margin: 2%;
+    width: 80%;
+    height: auto;
+    background-color:var(--colorsecundario);
+
+    border-radius: 5%;
+    border-color: var(--colorsecundario);
+    overflow-y: hidden;
+
+}
+.tarjetaProducto div{
+    height: fit-content;
+    overflow-y: hidden;
+}
+.tarjetaProducto .imagen{
+    width: 90%;
+    margin: 5%;
+    margin-bottom: 0px;
+}
+.tarjetaProducto .descripcion{
+    height: fit-content;
+    
+    
+}
+.tarjetaProducto .descripcion p{
+    margin: 0;
+    text-align: center;
+    color:#D0F4EA;
+    
+    
+}
+.botonAgregarCarro{
+    margin-left: 53%;
+    color: #000000;
+    background-color: var(--colorterceario);
+    border: 0px;
+    border-radius: 5%;
+    width: 50%;
+    height: 40px;
+    
+}
+#zonaReseñas{
+    
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr;
+    overflow-x: scroll;
+    background-color: var(--colorsecundario);
+    
+}
+.tarjetaOpinion{
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    width: 90%;
+    background-color: #1C3D5A;
+    color: white;
+    border-radius: 2%;
+    font-size: small;
+    border: 1px solid rgba(0, 0, 0, 0.473);
+}
+#formContacto{
+    margin-top: 100px;
+    margin-left: 30%;
+    margin-bottom: 33%;
+    width: 40%;
+    background-color: var(--colorterceario);
+}
+footer{
+    background-color: var(--colorterceario);
+    height: 90px;
+}
+.separadorNegro{
+    height: 10px;
+    background-color: var(--colorsecundario);
+}
+footer ul{
+    margin-top: 40px;
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.datosPHfooter{
+    display: none;
+    margin: 0%;
+}
+#categoriasPH{
+    margin: 0%;
+    display: none;
+    width: 100%;
+    height: fit-content;
+    justify-items: center;
+    width: auto;
+    height: auto;
+    background-color: var(--colorterceario);
+}
+
+#categoriasPH ul{
+    padding: 0%;
+    margin: 0%;
+    text-align: center;
+}
+
+#categoriasPH ul li h3 a{
+    text-decoration: none;
+}
+
+@media (max-width: 1444px) {
+    /*footer*/
+    footer ul{
+        margin-top: 10px;
+        margin-left: 10%;
+        padding: 0%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .datosPCfooter{
+        display: none;
+    }
+    .datosPHfooter{
+        display: block;
+
+    }
+    footer{
+        height: auto;
+    }
+}
+
+@media (max-width: 1444px) {
+    /*Contacto*/
+    #formContacto{
+        margin-left: 10%;
+        width: 80%;
+        margin-top: 28%;
+        margin-bottom: 28%;
+    }
+    #mainContacto{
+        height: 100%;
+    }
+}
+
+@media (max-width: 1000px) {
+    /*Contacto*/
+    #formContacto{
+        margin-left: 10%;
+        width: 80%;
+        margin-top: 35%;
+        margin-bottom: 35%;
+    }
+    #mainContacto{
+        height: 100%;
+    }
+}
+
+@media (max-width: 800px){
+    /*Inicio*/
+    #menu div h3 a{
+        margin-left: 22%;
+    }
+    .introtienda{
+        margin: 0%;
+        width: 100%;
+        height: 100%;
+        border-radius: 0%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    .panelintroTienda{
+        height: auto;
+        flex-direction: row;
+        height: auto;
+        
+    }
+    #introTiendabackground{
+        height: auto;
+    }
+    #introTiendabackground .panelintroTienda .introtienda{
+        margin-top: 0px;
+        padding-top: 100px;
+        padding-left: 2%;
+        padding-right: 2%;
+        height: 300px;
+        margin-bottom: 0px;
+    }
+    /*footer*/
+    footer ul{
+        margin-top: 10px;
+        margin-left: 20%;
+        padding: 0%;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .datosPCfooter{
+        display: none;
+    }
+    .datosPHfooter{
+        display: block;
+
+    }
+    footer{
+        height: auto;
+    }
+    /*Tienda*/
+    #tienda{
+        grid-template-rows: repeat(12, 1fr);
+        grid-template-columns: 1fr;
+        justify-content: space-between;
+        justify-items: center;
+    }
+    #tarjetaProducto{
+        margin: 0%;
+        height: fit-content;
+    }
+    #categoriasPC{
+        display: none;
+    }
+    #categoriasPH{
+        display: block;
+    }
+    #categorias ul{
+        margin-top: 10px;
+        margin-left: 50%;
+    }
+    #categorias ul li{
+        margin-bottom: 5px;
+    }
+    .botonAgregarCarro{
+        text-align: center;
+        font-size: 22px;
+        height: 80px;
+    }
+    .botonAgregarCarro p{
+        margin-bottom: 13%;
+    }
+    /*Contacto*/
+    #formContacto{
+        margin-left: 10%;
+        width: 80%;
+        margin-top: 48%;
+        margin-bottom: 48%;
+    }
+    #mainContacto{
+        height: 100%;
+    }
+
+}
