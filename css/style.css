@@ -180,6 +180,15 @@ body{
     width: 40%;
     background-color: var(--colorterceario);
 }
+#formContacto form button{
+    background-color: var(--colorsecundario);
+    color: white;
+    border: 2px solid var(--colorsecundario);
+}
+#formContacto form button :hover{
+    background-color: var(--colorterceario);
+    color: white;
+}
 footer{
     background-color: var(--colorterceario);
     height: 90px;
