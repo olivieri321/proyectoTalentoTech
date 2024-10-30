@@ -174,9 +174,7 @@ body{
     
 }
 .tarjetaOpinion{
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-bottom: 5%;
+    margin: 5%;
     width: 90%;
     background-color: #1C3D5A;
     color: white;
