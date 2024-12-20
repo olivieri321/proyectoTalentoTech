@@ -10,8 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"><!--Mis estilos-->
     <!--FontAwesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.css" integrity="sha512-8BU3emz11z9iF75b10oPjjpamM4Mz23yQFQymbtwyPN3mNWHxpgeqyrYnkIUP6A8KyAj5k2p3MiYLtYqew7gIw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--Bootstrap-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <!--Mi estilo-->
     <link rel="stylesheet" href="../css/style.css">
+    
+
 </head>
 <body>
     <header>
@@ -28,161 +32,76 @@
             <div>
                 <h3><a href="contacto.html">Contacto</a></h3>
             </div>
+            <div>
+                <h3 id="login"><a>Ingresar</a></h3>
+            </div>
         </nav>
     </header>
-    <main>
+    <main id="mainTienda">
+        
         <section id="categoriasPH">
-
-            <ul>
-                <li><h3><a href="">Procesadores</a></h3></li>
-                <li><h3><a href="">Graficas</a></h3></li>
-                <li><h3><a href="">Motherboards</a></h3></li>
-            </ul>
-
-        </section>
-        <section id="tienda">
-            <section id="categoriasPC">
-
-                <ul>
-                    <li><h3><a href="">Procesadores</a></h3></li>
-                    <li><h3><a href="">Graficas</a></h3></li>
-                    <li><h3><a href="">Motherboards</a></h3></li>
-                </ul>
-
+                <form>
+                    <h3>Buscar por</h3>
+                    <div>
+                        <label for="verProcesadores">Procesadores</label>
+                        <input type="checkbox" id="procesador" name="categoriasCheckbox" value="verProcesadores">
+                    </div>
+                    <div>
+                        <label for="verGraficas">GPUs</label>
+                        <input type="checkbox" id="gpu" name="categoriasCheckbox" value="verGraficas">
+                    </div>
+                    <div>
+                        <label for="verMotherboards">Motherboards</label>
+                        <input type="checkbox" id="motherboard" name="categoriasCheckbox" value="verMotherboards">
+                    </div>
+                    <div>
+                        <label for="verFuentes">Fuentes</label>
+                        <input type="checkbox" id="fuente" name="categoriasCheckbox" value="verFuentes">
+                    </div>
+                    <div>
+                        <label for="verMemorias">Memorias</label>
+                        <input type="checkbox" id="memoria" name="categoriasCheckbox" value="verMemorias">
+                    </div>
+                    <div>
+                        <label for="verGabinetes">Gabinetes</label>
+                        <input type="checkbox" id="gabinete" name="categoriasCheckbox" value="verGabinetes">
+                    </div>
+                    <div>
+                        <label for="verSSD">SSD</label>
+                        <input type="checkbox" id="SSD" name="categoriasCheckbox" value="verSSD">
+                    </div>
+                    <div>
+                        <label for="verHDD">HDD</label>
+                        <input type="checkbox" id="HDD" name="categoriasCheckbox" value="verHDD">
+                    </div>
+                </form>
+         </section>
+        <div id="contenedorTienda">
+            <section id="tienda">
+                <!-- Aca irian los productos agregados por javascript -->
+        
             </section>
-                
-            <card class="tarjetaProducto">
-                <div class="imagen">
-                <p><img src="../img/cpuTienda.jpg"></p>
-                </div>
-                <div class="descripcion">
-                    <p>Lorem ipsum dolor, sit amet consecteur adipisicing elit. Accusantium rem ea minima officia ex itaque debitis totam blanditiis repellendus, corrupti nobis, nesciunt eaque ad! Rem perspiciatis sequi debitis beatae ut?</p>
-                </div>
+            <div id="divicionBotonPagina">
+                <button id="botonPaginaAnterior"> < </button>
+                <button id="botonPaginaSiguiente"> > </button>
+            </div>
+        </div>
+        
+        <section id="carrito">
+            <div id="bloqueCarro">
                 <div>
-                    <button class="botonAgregarCarro"><p>COMPRAR</p></button>
+                    <h2>Carrito</h2>
+                    <ul class="elementosCarro">
+                    </ul>
+                    <p id="totalCarro">
+                        Total a pagar $0
+                    </p>
                 </div>
-            </card>
-            <card class="tarjetaProducto">
-                <div class="imagen">
-                <p><img src="../img/cpuTienda.jpg"></p>
-                </div>
-                <div class="descripcion">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium rem ea minima officia ex itaque debitis totam blanditiis repellendus, corrupti nobis, nesciunt eaque ad! Rem perspiciatis sequi debitis beatae ut?</p>
-                </div>
-                <div>
-                    <button class="botonAgregarCarro"><p>COMPRAR</p></button>
-                </div>
-            </card>
-            <card class="tarjetaProducto">
-                <div class="imagen">
-                    <p><img src="../img/cpuTienda.jpg"></p>
-                </div>
-                <div class="descripcion">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium rem ea minima officia ex itaque debitis totam blanditiis repellendus, corrupti nobis, nesciunt eaque ad! Rem perspiciatis sequi debitis beatae ut?</p>
-                </div>
-                <div>
-                    <button class="botonAgregarCarro"><p>COMPRAR</p></button>
-                </div>
-            </card>
-            <card class="tarjetaProducto">
-                <div class="imagen">
-                    <p><img src="../img/cpuTienda.jpg"></p>
-                </div>
-                <div class="descripcion">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium rem ea minima officia ex itaque debitis totam blanditiis repellendus, corrupti nobis, nesciunt eaque ad! Rem perspiciatis sequi debitis beatae ut?</p>
-                </div>
-                <div>
-                    <button class="botonAgregarCarro"><p>COMPRAR</p></button>
-                </div>
-            </card>
-            <card class="tarjetaProducto">
-                <div class="imagen">
-                    <p><img src="../img/cpuTienda.jpg"></p>
-                </div>
-                <div class="descripcion">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium rem ea minima officia ex itaque debitis totam blanditiis repellendus, corrupti nobis, nesciunt eaque ad! Rem perspiciatis sequi debitis beatae ut?</p>
-                </div>
-                <div>
-                    <button class="botonAgregarCarro"><p>COMPRAR</p></button>
-                </div>
-            </card>
-            <card class="tarjetaProducto">
-                <div class="imagen">
-                    <p><img src="../img/cpuTienda.jpg"></p>
-                </div>
-                <div class="descripcion">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium rem ea minima officia ex itaque debitis totam blanditiis repellendus, corrupti nobis, nesciunt eaque ad! Rem perspiciatis sequi debitis beatae ut?</p>
-                </div>
-                <div>
-                    <button class="botonAgregarCarro"><p>COMPRAR</p></button>
-                </div>
-            </card>
-            <card class="tarjetaProducto">
-                <div class="imagen">
-                    <p><img src="../img/cpuTienda.jpg"></p>
-                </div>
-                <div class="descripcion">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium rem ea minima officia ex itaque debitis totam blanditiis repellendus, corrupti nobis, nesciunt eaque ad! Rem perspiciatis sequi debitis beatae ut?</p>
-                </div>
-                <div>
-                    <button class="botonAgregarCarro"><p>COMPRAR</p></button>
-                </div>
-            </card>
-            <card class="tarjetaProducto">
-                <div class="imagen">
-                    <p><img src="../img/cpuTienda.jpg"></p>
-                </div>
-                <div class="descripcion">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium rem ea minima officia ex itaque debitis totam blanditiis repellendus, corrupti nobis, nesciunt eaque ad! Rem perspiciatis sequi debitis beatae ut?</p>
-                </div>
-                <div>
-                    <button class="botonAgregarCarro"><p>COMPRAR</p></button>
-                </div>
-            </card>
-            <card class="tarjetaProducto">
-                <div class="imagen">
-                    <p><img src="../img/cpuTienda.jpg"></p>
-                </div>
-                <div class="descripcion">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium rem ea minima officia ex itaque debitis totam blanditiis repellendus, corrupti nobis, nesciunt eaque ad! Rem perspiciatis sequi debitis beatae ut?</p>
-                </div>
-                <div>
-                    <button class="botonAgregarCarro"><p>COMPRAR</p></button>
-                </div>
-            </card>
-            <card class="tarjetaProducto">
-                <div class="imagen">
-                    <p><img src="../img/cpuTienda.jpg"></p>
-                </div>
-                <div class="descripcion">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium rem ea minima officia ex itaque debitis totam blanditiis repellendus, corrupti nobis, nesciunt eaque ad! Rem perspiciatis sequi debitis beatae ut?</p>
-                </div>
-                <div>
-                    <button class="botonAgregarCarro"><p>COMPRAR</p></button>
-                </div>
-            </card>
-            <card class="tarjetaProducto">
-                <div class="imagen">
-                    <p><img src="../img/cpuTienda.jpg"></p>
-                </div>
-                <div class="descripcion">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium rem ea minima officia ex itaque debitis totam blanditiis repellendus, corrupti nobis, nesciunt eaque ad! Rem perspiciatis sequi debitis beatae ut?</p>
-                </div>
-                <div>
-                    <button class="botonAgregarCarro"><p>COMPRAR</p></button>
-                </div>
-            </card>
-            <card class="tarjetaProducto">
-                <div class="imagen">
-                    <p><img src="../img/cpuTienda.jpg"></p>
-                </div>
-                <div class="descripcion">
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium rem ea minima officia ex itaque debitis totam blanditiis repellendus, corrupti nobis, nesciunt eaque ad! Rem perspiciatis sequi debitis beatae ut?</p>
-                </div>
-                <div>
-                    <button class="botonAgregarCarro"><p>COMPRAR</p></button>
-                </div>
-            </card> 
+            </div>
+            <div id="botonesCarro">
+                <button id="botonBorrar"><p>BORRAR</p></button>
+                <button id="botonPagar"><p>IR A PAGAR</p></button>
+            </div>
             
         </section>
         
@@ -198,5 +117,7 @@
         </ul>
         
     </footer>
+    <script src="../scriptsTienda.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

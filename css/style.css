@@ -11,8 +11,123 @@
     margin: 0;
     width: 100%;
     overflow-x: hidden;
-    font-family:Montserrat;
+    font-family:Montserrat !important;
 }
+*::-webkit-scrollbar {
+    width: 16px;
+  }
+
+*::-webkit-scrollbar-track {
+    background: #000000;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #5aa054;
+    border-radius: 5px;
+    border: 3px solid #000000;
+}
+/*Login*/
+
+#login{
+    color: white;
+}
+
+/*Carrito de Compras*/
+
+#carritoCompras{
+    background-color: #070f16;
+    color: white;
+}
+
+.elementosCarro{
+    text-decoration:solid !important;
+    list-style-type: disc;
+}
+.elementosCarro li::before{
+    content:"·";
+}
+
+#carrito{
+    background-color: var(--colorsecundario);
+    color: #000000;
+    grid-row: span 2 ;
+    display: grid;
+    height: 705px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+}
+#carrito div{
+    background-color: var(--colorterceario);
+}
+#carrito div ul{
+    margin: 0%;
+    padding: 0%;
+    overflow-y: scroll;
+    height: 550.3px;
+}
+#carrito div li{
+    font-size: larger;
+    text-align: center;
+}
+#carrito div h2{
+    margin: 0%;
+}
+#carrito h2{
+    width: 100%;
+    background-color: var(--colorsecundario);
+    color: white;
+    width: 100%;
+}
+#bloqueCarro{
+    margin-left: 3%;
+    grid-row: span 8;
+    grid-column: span 2;
+}
+#bloqueCarro div{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+#totalCarro{
+    margin: 0%;
+    padding: 0%;
+    background-color: #000000;
+    color: var(--colorterceario);
+    font-size: 25px;
+    text-align: center;
+}
+
+#botonesCarro{
+    margin-top: 10px;
+    border-radius: 6px;
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: var(--colorsecundario);
+    grid-column: span 2;
+    justify-content: space-around;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+#botonBorrar{
+    background-color: var(--colorterceario);
+    color: var(--colorsecundario);
+    width: 45%;
+    border-radius: 8px;
+}
+#botonBorrar p{
+    margin: 0%;
+}
+#botonPagar{
+    background-color: var(--colorterceario);
+    color: var(--colorsecundario);
+    width: 45%;
+    border-radius: 8px;
+}
+#botonPagar p{
+    margin: 0%;
+}
+
+
 /*Estilos inicio*/
 
 #introTiendabackground{
@@ -59,6 +174,12 @@
 
 /**/
 
+#mainTienda{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
 body{
     background-color: var(--colorprimario);
 }
@@ -67,6 +188,7 @@ body{
     height: 50px;
     color: white;
     text-align: center;
+    overflow: hidden;
 }
 #formularioContacto{
     margin-left: 30%;
@@ -86,9 +208,10 @@ body{
 
 #menu div{
     justify-content: center;
+    width: 20%;
 }
 #menu div h3 a {
-    margin-left: 33.3333%;
+    margin-left: 25%;
     width: auto;
     height: auto;
     text-decoration: none;
@@ -98,16 +221,48 @@ body{
     transition-duration: 400ms;
     color: #B8B42D;
 }
+#contenedorTienda{
+    grid-column: span 3;
+    grid-row: span 3;
+}
 
 #tienda {
     background-color: var(--colorprimario);
+    height: 1000px;
     display: grid;
+    margin-left: 1%;
+    margin-right: 1%;
+    width: 98%;
+    margin-top: 10px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    gap: 0.5%;
+    gap: 1.5%;
+    justify-content: space-around;
+    overflow-y: hidden;
 }
+#divicionBotonPagina{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+#botonPaginaAnterior{
+    background-color: var(--colorsecundario);
+    color: var(--colorterceario);
+    border: 0px;
+    width: 40px;
+    height: 40px;
+}
+#botonPaginaSiguiente{
+    background-color: var(--colorsecundario);
+    color: var(--colorterceario);
+    border: 0px;
+    width: 40px;
+    height: 40px;
+}
+
 #categoriasPC{
     grid-row: span 3;
+    display: block;
     width: auto;
     height: auto;
     background-color: var(--colorterceario);
@@ -123,45 +278,83 @@ body{
 }
 
 .tarjetaProducto{
-    margin: 2%;
-    width: 80%;
-    height: auto;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
     background-color:var(--colorsecundario);
-
     border-radius: 5%;
     border-color: var(--colorsecundario);
+    position: relative;
     overflow-y: hidden;
-
+    transform-origin: center center;
+    transition: 0.3s;
 }
 .tarjetaProducto div{
-    height: fit-content;
     overflow-y: hidden;
+    margin-top: auto;
 }
-.tarjetaProducto .imagen{
+
+.tarjetaProducto .imagen p img{
+    max-height: 180px;
     width: 90%;
     margin: 5%;
     margin-bottom: 0px;
 }
+
 .tarjetaProducto .descripcion{
     height: fit-content;
-    
-    
 }
 .tarjetaProducto .descripcion p{
     margin: 0;
     text-align: center;
     color:#D0F4EA;
     
+}
+
+.tarjetaProductoCompleta{
+    transform: scale(2);
+    width: 20%;
+    height: fit-content;
+    position:fixed;
+    margin-left: 15%;
+    margin-top: 8.5%;
+    transition: 0.3s;
+    z-index: 10;
     
 }
-.botonAgregarCarro{
-    margin-left: 53%;
+.botonesTarjetaProducto{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    gap: 2%;
+}
+.botonAmpliarCarta{
+    margin-top: 10px;
     color: #000000;
     background-color: var(--colorterceario);
     border: 0px;
+    font-size: 12px;
     border-radius: 5%;
     width: 50%;
-    height: 40px;
+    height: 50px;
+}
+.botonAgregarCarro:hover{
+    background-color:#B8B42D;
+    transition: all 1.5 ease;
+}
+.botonAmpliarCarta:hover{
+    background-color:#B8B42D;
+    transition: all 1.5 ease;
+}
+.botonAgregarCarro{
+    margin-top: 10px;
+    color: #000000;
+    background-color: var(--colorterceario);
+    border: 0px;
+    font-size: 12px;
+    border-radius: 5%;
+    width: 50%;
+    height: 50px;
     
 }
 #zonaReseñas{
@@ -205,28 +398,46 @@ footer ul{
     justify-content: space-around;
 }
 .datosPHfooter{
-    display: none;
+    /*display: none;*/
     margin: 0%;
 }
 #categoriasPH{
     margin: 0%;
-    display: none;
+    /*display: none;*/
     width: 100%;
     height: fit-content;
     justify-items: center;
     width: auto;
     height: auto;
-    background-color: var(--colorterceario);
+    background-color: var(--colorsecundario);
 }
 
-#categoriasPH ul{
+#categoriasPH form{
     padding: 0%;
     margin: 0%;
-    text-align: center;
+    text-align: left;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-#categoriasPH ul li h3 a{
+#categoriasPH form h3{
     text-decoration: none;
+    color: #A4C639;
+}
+#categoriasPH form div{
+    display: flex;
+    justify-content:center;
+}
+#categoriasPH form div input{
+    text-decoration: none;
+    color: #A4C639;
+    width: 20%;
+}
+#categoriasPH form div label{
+    width: 40%;
+    text-decoration: none;
+    color: #A4C639;
 }
 
 #reseñas{
@@ -251,6 +462,12 @@ footer ul{
     width: 80%;
     padding: 10%;
 }
+
+/* modificaciones al bootstrap*/
+
+
+
+/*Media querys*/
 
 @media (max-width: 1444px) {
     /*footer*/
@@ -286,7 +503,7 @@ footer ul{
     }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
     /*Contacto*/
     #formContacto{
         margin-left: 10%;
@@ -350,11 +567,27 @@ footer ul{
         height: auto;
     }
     /*Tienda*/
+    #mainTienda{
+        display: flex;
+        flex-direction: column;
+    }
+    #contenedorTienda{
+        height: fit-content;
+    }
     #tienda{
-        grid-template-rows: repeat(12, 1fr);
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        gap: 15px;
         justify-content: space-between;
         justify-items: center;
+        margin-bottom: 10px;
+    }
+    #bloqueCarro{
+        margin: 0%;
+    }
+    #totalCarro{
+        height: 50px;
     }
     #tarjetaProducto{
         margin: 0%;
