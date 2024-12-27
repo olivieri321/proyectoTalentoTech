@@ -5,7 +5,7 @@ try{
     let contenedorTarjetas = document.querySelector("#reseñas");
     let tarjetas = document.querySelectorAll(".tarjetaReseña");
     let indiceRotacion = 0;
-    let desplazamiento = 390; 
+    let desplazamiento = tarjetas[0].offsetWidth + 20 ; 
 
     function rotarTarjetas() {
         contenedorTarjetas.style.transform = `translateX(-${desplazamiento * indiceRotacion}px)`;
