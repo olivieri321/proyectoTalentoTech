@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "nombre": "ryzen 3",
         "descripcion": "Modelo: Ryzen 3 5500G\nNúcleos: 4 núcleos\nHilos: 8 hilos\nFrecuencia: 3.8GHz - 4.2GHz\niGPU: Sí (Radeon Graphics)\nSocket: AM4\nMemoria: DDR4\nTDP: 65W",
         "precio": 300000,
@@ -7,6 +8,7 @@
         "imagen": "ryzen3.webp"
     },
     {
+        "id": 2,
         "nombre": "ryzen 5",
         "descripcion": "Modelo: Ryzen 5 5600G\nNucleos: 6 nucleos\nHilos: 12 hilos\nFrecuencia: 3.9ghz - 4.4ghz\nIgpu: si\nSocalo: AM4\nMemoria: ddr4\nTDP: 65W",
         "precio": 500000,
@@ -14,6 +16,7 @@
         "imagen": "ryzen5.webp"
     },
     {
+        "id": 3,
         "nombre": "ryzen 7",
         "descripcion": "Modelo: Ryzen 5 5600G\nNúcleos: 6 núcleos\nHilos: 12 hilos\nFrecuencia: 3.9GHz - 4.4GHz\niGPU: sí\nSocket: AM4\nMemoria: DDR4\nTDP: 65W",
         "precio": 700000,
@@ -21,6 +24,7 @@
         "imagen": "ryzen7.webp"
     },
     {
+        "id": 4,
         "nombre": "ryzen 9",
         "descripcion": "Modelo: Ryzen 9 5900X\nNúcleos: 12 núcleos\nHilos: 24 hilos\nFrecuencia: 3.9GHz - 4.4GHz\niGPU: no\nSocket: AM4\nMemoria: DDR4\nTDP: 65W",
         "precio": 900000,
@@ -28,6 +32,7 @@
         "imagen": "ryzen9.webp"
     },
     {
+        "id": 5,
         "nombre": "rx 6800",
         "descripcion": "Modelo: Radeon RX 6800\nArquitectura: RDNA 2\nNúcleos: 36 Compute Units (aproximadamente 2304 Stream Processors)\nMemoria: 16GB GDDR6\nAncho de banda de memoria: 512 GB/s\nInterfaz de memoria: 256-bit\nTDP: 250W\nConectores: 8-pin + 8-pin\nTecnología de fabricación: 7nm\nRay tracing: Sí\nFSR: Sí (AMD FidelityFX Super Resolution)\nVRR: Sí (Variable Refresh Rate)",
         "precio": 800000,
@@ -35,6 +40,7 @@
         "imagen": "rx6800.jpg"
     },
     {
+        "id": 6,
         "nombre": "rx 6700",
         "descripcion": "Modelo: Radeon RX 6700\nArquitectura: RDNA 2\nNúcleos: 32 Compute Units (aproximadamente 2048 Stream Processors)\nMemoria: 10GB GDDR6\nAncho de banda de memoria: 384 GB/s\nInterfaz de memoria: 192-bit\nTDP: 175W\nConectores: 8-pin\nTecnología de fabricación: 7nm\nRay tracing: Sí\nFSR: Sí (AMD FidelityFX Super Resolution)\nVRR: Sí (Variable Refresh Rate)",
         "precio": 650000,
@@ -42,6 +48,7 @@
         "imagen": "rx6700.webp"
     },
     {
+        "id": 7,
         "nombre": "rx 6600",
         "descripcion": "Modelo: Radeon RX 6600\nArquitectura: RDNA 2\nNúcleos: 28 Compute Units (aproximadamente 1792 Stream Processors)\nMemoria: 8GB GDDR6\nAncho de banda de memoria: 224 GB/s\nInterfaz de memoria: 128-bit\nTDP: 132W\nConectores: 8-pin\nTecnología de fabricación: 7nm\nRay tracing: Sí\nFSR: Sí (AMD FidelityFX Super Resolution)\nVRR: Sí (Variable Refresh Rate)",
         "precio": 500000,
@@ -49,6 +56,7 @@
         "imagen": "rx6600.webp"
     },
     {
+        "id": 8,
         "nombre": "rx 6500",
         "descripcion": "Modelo: Radeon RX 6500 XT\nArquitectura: RDNA 2\nNúcleos: 16 Compute Units (aproximadamente 1024 Stream Processors)\nMemoria: 4GB GDDR6 o 8GB GDDR6 (dependiendo del modelo)\nAncho de banda de memoria: 144 GB/s\nInterfaz de memoria: 64-bit\nTDP: 107W\nConectores: 6-pin\nTecnología de fabricación: 6nm\nRay tracing: Sí\nFSR: Sí (AMD FidelityFX Super Resolution)\nVRR: Sí (Variable Refresh Rate)",
         "precio": 320000,
@@ -56,6 +64,7 @@
         "imagen": "rx6500.webp"
     },
     {
+        "id": 9,
         "nombre": "rtx 4090",
         "descripcion": "Modelo: NVIDIA GeForce RTX 4090\nArquitectura: Ada Lovelace\nNúcleos: CUDA Cores (número exacto varía según el modelo específico)\nMemoria: 24GB GDDR6X\nAncho de banda de memoria: 912 GB/s\nInterfaz de memoria: 384-bit\nTDP: Aproximadamente 450W (puede variar según el modelo)\nConectores: 16-pin (requiere adaptador a 12VHPWR)\nTecnología de fabricación: 4N\nRay tracing: Sí (tercera generación)\nDLSS: Sí (DLSS 3)\nVRR: Sí (Compatible con G-SYNC)",
         "precio": 2000000,
@@ -63,6 +72,7 @@
         "imagen": "rtx4090.webp"
     },
     {
+        "id": 10,
         "nombre": "rtx 4080",
         "descripcion": "Modelo: NVIDIA GeForce RTX 4080\nArquitectura: Ada Lovelace\nNúcleos: CUDA Cores (número exacto varía según el modelo específico)\nMemoria: 16GB GDDR6X\nAncho de banda de memoria: 616 GB/s\nInterfaz de memoria: 256-bit\nTDP: Aproximadamente 320W (puede variar según el modelo)\nConectores: 16-pin (requiere adaptador a 12VHPWR)\nTecnología de fabricación: 4N\nRay tracing: Sí (tercera generación)DLSS: Sí (DLSS 3)VRR: Sí (Compatible con G-SYNC)",
         "precio": 1300000,
@@ -70,6 +80,7 @@
         "imagen": "rtx4080.webp"
     },
     {
+        "id": 11,
         "nombre": "rtx 4070",
         "descripcion": "Modelo: NVIDIA GeForce RTX 4070\nArquitectura: Ada Lovelace\nNúcleos: CUDA Cores (número exacto varía según el modelo específico)\nMemoria: 12GB GDDR6X\nAncho de banda de memoria: 448 GB/s\nInterfaz de memoria: 192-bit\nTDP: Aproximadamente 200W (puede variar según el modelo)\nConectores: 16-pin (requiere adaptador a 12VHPWR)\nTecnología de fabricación: 4N\nRay tracing: Sí (tercera generación)DLSS: Sí (DLSS 3)VRR: Sí (Compatible con G-SYNC)",
         "precio": 1000000,
@@ -77,6 +88,7 @@
         "imagen": "rtx4070.webp"
     },
     {
+        "id": 12,
         "nombre": "rtx 4060",
         "descripcion": "Modelo: NVIDIA GeForce RTX 4060\nArquitectura: Ada Lovelace\nNúcleos: CUDA Cores (número exacto varía según el modelo específico)\nMemoria: 8GB GDDR6X\nAncho de banda de memoria: 288 GB/s\nInterfaz de memoria: 128-bit\nTDP: Aproximadamente 115W (puede variar según el modelo)\nConectores: 8-pin\nTecnología de fabricación: 4N\nRay tracing: Sí (tercera generación)DLSS: Sí (DLSS 3)VRR: Sí (Compatible con G-SYNC)",
         "precio": 700000,
@@ -84,6 +96,7 @@
         "imagen": "rtx4060.webp"
     },
     {
+        "id": 13,
         "nombre": "rtx 4050",
         "descripcion": "Modelo: NVIDIA GeForce RTX 4050\nArquitectura: Ada Lovelace\nNúcleos: CUDA Cores (número exacto varía según el modelo específico)\nMemoria: 6GB GDDR6\nAncho de banda de memoria: 180 GB/s\nInterfaz de memoria: 96-bit\nTDP: Aproximadamente 100W (puede variar según el modelo)\nConectores: 8-pin\nTecnología de fabricación: 4N\nRay tracing: Sí (tercera generación)DLSS: Sí (DLSS 3)VRR: Sí (Compatible con G-SYNC)",
         "precio": 500000,
@@ -91,6 +104,7 @@
         "imagen": "rtx4050.jpg"
     },
     {
+        "id": 14,
         "nombre": "intel core i9",
         "descripcion": "Modelo: Intel Core i9-13900K\nArquitectura: Raptor Lake\nNúcleos: 24 (8 P-cores + 16 E-cores)\nHilos: 32\nFrecuencia base: 3.0 GHz (P-cores) / 2.2 GHz (E-cores)\nFrecuencia turbo máxima: 5.8 GHz\nCaché: 36 MB Intel Smart Cache\nTecnología de fabricación: Intel 7\nSocket: LGA 1700\nTDP: 125W",
         "precio": 900000,
@@ -98,6 +112,7 @@
         "imagen": "i9.jpg"
     },
     {
+        "id": 15,
         "nombre": "intel core i7",
         "descripcion": "Modelo: Intel Core i7-13700K\nArquitectura: Raptor Lake\nNúcleos: 16 (8 P-cores + 8 E-cores)\nHilos: 24\nFrecuencia base: 3.4 GHz (P-cores) / 2.5 GHz (E-cores)\nFrecuencia turbo máxima: 5.4 GHz\nCaché: 30 MB Intel Smart Cache\nTecnología de fabricación: Intel 7\nSocket: LGA 1700\nTDP: 125W",
         "precio": 500000,
@@ -105,6 +120,7 @@
         "imagen": "i7.webp"
     },
     {
+        "id": 16,
         "nombre": "intel core i5",
         "descripcion": "Modelo: Intel Core i5-13500K\nArquitectura: Raptor Lake\nNúcleos: 14 (6 P-cores + 8 E-cores)\nHilos: 20\nFrecuencia base: 2.5 GHz (P-cores) / 1.8 GHz (E-cores)\nFrecuencia turbo máxima: 4.8 GHz\nCaché: 24 MB Intel Smart Cache\nTecnología de fabricación: Intel 7\nSocket: LGA 1700\nTDP: 65W",
         "precio": 300000,
@@ -112,6 +128,7 @@
         "imagen": "i5.webp"
     },
     {
+        "id": 17,
         "nombre": "intel core i3",
         "descripcion": "Modelo: Intel Core i3-13300K\nArquitectura: Raptor Lake\nNúcleos: 4 (4 P-cores)\nHilos: 8\nFrecuencia base: 3.4 GHz\nFrecuencia turbo máxima: 5.1 GHz\nCaché: 12 MB Intel Smart Cache\nTecnología de fabricación: Intel 7\nSocket: LGA 1700\nTDP: 89W",
         "precio": 120000,
@@ -119,6 +136,7 @@
         "imagen": "i3.webp"
     },
     {
+        "id": 18,
         "nombre": "intel pentium",
         "descripcion": "Modelo: Intel Pentium Gold G7500\nArquitectura: Gracemont\nNúcleos: 2\nHilos: 4 (con tecnología Hyper-Threading)\nFrecuencia base: 3.5 GHz\nFrecuencia turbo máxima: 3.8 GHz\nCaché: 4 MB\nTecnología de fabricación: Intel 10nm SuperFin\nSocket: LGA 1200\nTDP: 35W",
         "precio": 70000,
@@ -126,6 +144,7 @@
         "imagen": "pentium.jpg"
     },
     {
+        "id": 19,
         "nombre": "SSD Kingstone 1tb",
         "descripcion": "",
         "precio": 70000,
@@ -133,6 +152,7 @@
         "imagen": "SSDKingstone.jfif"
     },
     {
+        "id": 20,
         "nombre": "SSD Kingstone 500gb",
         "descripcion": "",
         "precio": 50000,
@@ -140,6 +160,7 @@
         "imagen": "SSDKingstone.jfif"
     },
     {
+        "id": 21,
         "nombre": "SSD Kingstone 240gb",
         "descripcion": "",
         "precio": 30000,
@@ -147,24 +168,27 @@
         "imagen": "SSDKingstone.jfif"
     },
     {
-        "nombre": "Disco Duro Seagate 2tb",
+        "id": 22,
+        "nombre": "SSD Samsung 1tb",
         "descripcion": "",
-        "precio": 90000,
-        "categoria": "HDD",
-        "imagen": "seagate.webp"
+        "precio": 80000,
+        "categoria": "SSD",
+        "imagen": "SSDsamsung.webp"
     },
     {
-        "nombre": "Disco Duro Seagate 1tb",
+        "id": 23,
+        "nombre": "SSD Samsung 500gb",
         "descripcion": "",
-        "precio": 70000,
-        "categoria": "HDD",
-        "imagen": "seagate.webp"
+        "precio": 60000,
+        "categoria": "SSD",
+        "imagen": "SSDsamsung.webp"
     },
     {
-        "nombre": "Disco Duro Seagate 500gb",
+        "id": 24,
+        "nombre": "SSD Samsung 250gb",
         "descripcion": "",
-        "precio": 50000,
-        "categoria": "HDD",
-        "imagen": "seagate.webp"
+        "precio": 35000,
+        "categoria": "SSD",
+        "imagen": "SSDsamsung.webp"
     }
 ]

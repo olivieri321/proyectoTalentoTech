@@ -1,72 +1,81 @@
-// no es obligatorio el uso de bootstrap
 
+// array de productos, se le asignara los productos con api-rest
 let productos = [];
-
-/* Implementacion de categorías */ 
 
 const totalCarrito = document.querySelector("#totalCarro");
 let pagina = 1;
 let totalApagar = 0;
-
-// Carrito
 
 
 const checkboxes = document.querySelectorAll("input[name='categoriasCheckbox']");
 const botonSiguientePaginaTienda = document.querySelector("#botonPaginaSiguiente");
 const botonAnteriorPaginaTienda = document.querySelector("#botonPaginaAnterior");
 
+// añadir los eventos a los botones de siguiente y anterior pagina
+
 function añadirBotonesPagina(){
-    botonSiguientePaginaTienda.addEventListener("click", event =>{
-        if(contadorAñadidos > 15 ){
-            //hacer nada
-        }else{
-            pagina++;
-            botonAnteriorPaginaTienda.disabled = false;
-            if(pagina > productos.length / maximosElementosPagina){
-                botonSiguientePaginaTienda.disabled = true;
+    try{
+        botonSiguientePaginaTienda.addEventListener("click", event =>{
+            if(contadorAñadidos > 15 ){
+                //hacer nada
+            }else{
+                pagina++;
+                botonAnteriorPaginaTienda.disabled = false;
+                if(pagina > productos.length / maximosElementosPagina){
+                    botonSiguientePaginaTienda.disabled = true;
+                }
             }
-        }
-        
-        iniciarTienda();
-    })
-    botonAnteriorPaginaTienda.addEventListener("click", event =>{
-        if(pagina > 1){
-            pagina--
-            botonSiguientePaginaTienda.disabled = false;
-            if(pagina == 1){
-                botonAnteriorPaginaTienda.disabled = true;
+            
+            iniciarTienda();
+        })
+        botonAnteriorPaginaTienda.addEventListener("click", event =>{
+            if(pagina > 1){
+                pagina--
+                botonSiguientePaginaTienda.disabled = false;
+                if(pagina == 1){
+                    botonAnteriorPaginaTienda.disabled = true;
+                }
             }
-        }
-        iniciarTienda();
-    })
+            iniciarTienda();
+        })
+    }catch(error){
+        console.log("error al agregar los eventos de los botones de siguiente o anterior pagina:" + error)
+    }
+    
 }
 
-// Agregar un event listener a cada checkbox
+// Agregar un event listener a cada checkbox con su respectiva categoria
 
 let categoriasSeleccionadas = [];
 
-checkboxes.forEach((checkbox) => {
-    checkbox.addEventListener("change", (event) => {
-        const categoria = event.target.id.trim().toLowerCase();
+try{
+    checkboxes.forEach((checkbox) => {
+        checkbox.addEventListener("change", (event) => {
+            const categoria = event.target.id.trim().toLowerCase();
 
-        if (event.target.checked) {
-            // Agregar la categoría seleccionada al array
-            categoriasSeleccionadas.push(categoria);
-        } else {
-            // Eliminar la categoría deseleccionada del array
-            categoriasSeleccionadas = categoriasSeleccionadas.filter((cat) => cat !== categoria);
-        }
-        pagina = 1;
-        
-        iniciarTienda();
-
-        botonAnteriorPaginaTienda.disabled = true;
-        botonSiguientePaginaTienda.disabled = true;
-        if(contadorAñadidos>=15){
-            botonSiguientePaginaTienda.disabled = false;
-        }
+            if (event.target.checked) {
+                // Agregar la categoría seleccionada al array
+                categoriasSeleccionadas.push(categoria);
+            } else {
+                // Eliminar la categoría deseleccionada del array
+                categoriasSeleccionadas = categoriasSeleccionadas.filter((cat) => cat !== categoria);
+            }
+            pagina = 1;
+            
+            iniciarTienda(); // se iniciara la tienda para mostrar los productos cuyas categorias esten en el array de categorias seleccionadas
+    
+            // deshabilitar los botones de interaccion con pagina para evitar imprevistos
+            botonAnteriorPaginaTienda.disabled = true;
+            botonSiguientePaginaTienda.disabled = true;
+            if(contadorAñadidos>=15){
+                botonSiguientePaginaTienda.disabled = false;
+            }
+        });
     });
-});
+}catch(error){
+    console.log("error al asignar los eventos de las checkbox: "+error);
+}
+
 
 
 /* generar tarjetas de productos */
@@ -80,9 +89,11 @@ let contadorAñadidos = 0
 
 function generarTarjetasTienda(producto, numproducto) {
     try{
-        if (numproducto > maximosElementosPagina * pagina || numproducto < maximosElementosPagina * (pagina - 1)) {
+        if (numproducto > maximosElementosPagina * pagina || numproducto < maximosElementosPagina * (pagina - 1)) { 
             // No hacer nada si no está en la página actual
         } else {
+            // se actualizo numProducto del botonAgregarCarro como producto.id - 1 para añadir el producto
+            // teniendo en cuenta su id y no su posicion relativa en la pagina
             productoshtml += `
                 <card class="tarjetaProducto" numProducto="${numproducto}">
                         <div class="imagen">
@@ -95,7 +106,7 @@ function generarTarjetasTienda(producto, numproducto) {
                         </div>
                         <div class="botonesTarjetaProducto">
                             <button class="botonAmpliarCarta" numProducto="${numproducto}">VER DESCRIPCION</button>
-                            <button class="botonAgregarCarro" numProducto="${numproducto}">AÑADIR AL CARRO</button>
+                            <button class="botonAgregarCarro" numProducto="${producto.id - 1}">AÑADIR AL CARRO</button>
                         </div>
                 </card>`;
             tarjetasProductosAñadidas[contadorAñadidos] = numproducto;
@@ -111,6 +122,8 @@ function generarTarjetasTienda(producto, numproducto) {
 
 const zonaCarrito = document.querySelector(".elementosCarro");
 
+
+// se cargara carrito ya alocado en almacenamiento local o se creara uno
 
 function cargarCarrito(){
     try{
@@ -135,19 +148,22 @@ function cargarCarrito(){
     
 }
 
+// añadir un producto (idProducto) al carrito de compras
+
 function añadirProductoACarrito(idProducto){
     try{
         if (idProducto >= 0 && idProducto < productos.length){
 
             let carrito = JSON.parse(localStorage.getItem('carritoTiendaTech')) || [];
             let encontrado = false;
+            // si se encuentra el producto en el carrito solo se le aumentara la cantidad
             for (let i = 0; i < carrito.length; i++) {
                 if(carrito[i].nombre == productos[idProducto].nombre && carrito[i].precio == productos[idProducto].precio){
                     carrito[i].cantidad++;
                     encontrado = true;
                 }
             }
-    
+            // si no, se creara el elemento del carrito correspondiente al producto
             if(!encontrado){
                 carrito.push({
                     nombre: productos[idProducto].nombre,
@@ -171,6 +187,7 @@ function añadirProductoACarrito(idProducto){
     
 }
 
+// añadir listeners de los botones de compra de cada uno de las tarjetas de productos presentes
 
 function añadirListenersCompra(){
     try{
@@ -188,6 +205,8 @@ function añadirListenersCompra(){
     
 }
 
+// lo mismo que añadirListenersCompra() solo que para los botones ampliar
+
 function agregarBotonesAmpliar(){
     try{
         const botonesAmpliar = document.querySelectorAll('.botonAmpliarCarta');
@@ -203,6 +222,8 @@ function agregarBotonesAmpliar(){
     }
     
 }
+
+// simula comprar productos, y los borra del carrito
 
 function comprarProductos(){
     try{
@@ -302,8 +323,7 @@ function añadirMasMenosCarrito(){
     
 }
 
-
-/* funcion para añadir las tarjetas que contienen los productos a la tienda */ 
+// se buscara el archivo que contiene los productos en formato json con api-rest
 
 async function buscarProductos() {
     try {
@@ -318,6 +338,8 @@ async function buscarProductos() {
         console.error('Error al realizar fetch:', error);
     }
 }
+
+// funcion para iniciar la tienda en orden
 
 function iniciarTienda() {
     try{
@@ -345,6 +367,8 @@ function iniciarTienda() {
 }
 
 
+// se iniciara primero buscarproductos antes que iniciar tienda para evitar paginas sin productos
 buscarProductos();
+
 añadirListenersPagoBorrar();
 añadirBotonesPagina();

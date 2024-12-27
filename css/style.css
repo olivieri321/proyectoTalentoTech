@@ -26,6 +26,8 @@
     border-radius: 5px;
     border: 3px solid #000000;
 }
+
+
 /*Login*/
 
 #login{
@@ -199,9 +201,9 @@ body{
     background-color: var(--colorprimario);
 }
 #banner{
-    background-color: var(--colorsecundario);
+    background-color: var(--colorterceario);
     height: 50px;
-    color: white;
+    color: black;
     text-align: center;
     overflow: hidden;
 }
@@ -256,6 +258,7 @@ body{
     overflow-y: hidden;
 }
 #divicionBotonPagina{
+    margin-top: 10PX;
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -402,6 +405,8 @@ body{
     margin-top: 40px;
     margin-left: 30%;
     margin-bottom: 5%;
+    border: 10px solid var(--colorsecundario);
+    border-radius: 5px;
     width: 40%;
     background-color: var(--colorterceario);
 }
@@ -410,9 +415,10 @@ body{
     color: white;
     border: 2px solid var(--colorsecundario);
 }
-#formContacto form button :hover{
+#formContacto form button:hover{
     background-color: var(--colorterceario);
-    color: white;
+    color: black;
+    transition: 0.5s;
 }
 footer{
     background-color: var(--colorterceario);
@@ -472,96 +478,59 @@ footer ul{
     color: #A4C639;
 }
 
-#reseñas{
+#reseñas {
     margin-top: 20px;
-    display: grid;
-    width: 100%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-direction: row;
     padding: 1%;
+    overflow: visible;
+    width: 100%;
+    transition: transform 0.5s ease; /* Agrega una transición suave al desplazamiento */
 }
-#reseñas card{
+
+
+#reseñas .tarjetaReseña {
     background-color: rgba(0, 0, 0, 0.500);
     color: white;
+    width: 500px;
     border-radius: 10%;
     text-align: center;
-    width: 70%;
-    margin: 10%;
-
+    flex-shrink: 0;
+    margin-right: 20px;
 }
 
-#reseñas card img{
+#reseñas .tarjetaReseña img {
     width: 80%;
     padding: 10%;
 }
-
-/* modificaciones al bootstrap*/
 
 
 
 /*Media querys*/
 
-@media (max-width: 1444px) {
-    /*footer*/
-    footer ul{
-        margin-top: 10px;
-        margin-left: 10%;
-        padding: 0%;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .datosPCfooter{
-        display: none;
-    }
-    .datosPHfooter{
-        display: block;
-
-    }
-    footer{
-        height: auto;
-    }
-}
-
-@media (max-width: 1444px) {
-    /*Contacto*/
-    #formContacto{
-        margin-left: 10%;
-        width: 80%;
-        margin-top: 28%;
-        margin-bottom: 28%;
-    }
-    #mainContacto{
-        height: 100%;
-    }
-}
-
-@media (max-width: 1024px) {
-    /*Contacto*/
-    #formContacto{
-        margin-left: 10%;
-        width: 80%;
-        margin-top: 35%;
-        margin-bottom: 35%;
-    }
-    #mainContacto{
-        height: 100%;
-    }
-}
-
-@media (max-width: 800px){
+@media (max-width: 515px){
     /*Inicio*/
     #menu div h3 a{
-        margin-left: 22%;
+        margin-left: 0;
+        font-size: medium;
+        
+    }
+    #menu div h3{
+        text-align: center;
+        
+    }
+    #menu div{
+        width: 100%;
     }
     .introtienda{
         margin: 0%;
         width: 100%;
-        height: 100%;
+        height: fit-content;
         border-radius: 0%;
         padding-top: 30px;
-        padding-bottom: 30px;
         padding-left: 2%;
         padding-right: 2%;
+        overflow: hidden;
     }
     .panelintroTienda{
         height: auto;
@@ -588,12 +557,156 @@ footer ul{
         flex-direction: column;
         justify-content: space-between;
     }
-    .datosPCfooter{
+    footer{
+        height: auto;
+    }
+    /*Tienda*/
+    #mainTienda{
+        display: flex;
+        flex-direction: column;
+    }
+    #contenedorTienda{
+        height: fit-content;
+    }
+    #tienda{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        gap: 15px;
+        justify-content: space-between;
+        justify-items: center;
+        margin-bottom: 10px;
+    }
+    #bloqueCarro{
+        margin: 0%;
+        height: fit-content;
+    }
+    .tarjetaProducto{
+        width: 100%;
+        font-size: 30px;
+        height: fit-content;
+    }
+    .elementosCarro{
+        width: 100%;
+    }
+    #totalCarro{
+        height: 50px;
+    }
+    #tarjetaProducto{
+        margin: 0%;
+        height: fit-content;
+    }
+    #categoriasPC{
         display: none;
     }
-    .datosPHfooter{
+    #categoriasPH{
         display: block;
+    }
+    #categorias ul{
+        margin-top: 10px;
+        margin-left: 50%;
+    }
+    #categorias ul li{
+        margin-bottom: 5px;
+    }
+    .cartaAmpliada {
+        position: relative;
+        width: 100%;
+        height: auto;
+        transform: translate(-50%, 0) scale(1);
+        z-index: 1;
+    }
+    .botonAgregarCarro{
+        text-align: center;
+        font-size: 22px;
+        height: 80px;
+    }
+    .botonAmpliarCarta{
+        text-align: center;
+        font-size: 22px;
+        height: 80px;
+    }
+    .botonAgregarCarro p{
+        margin-bottom: 13%;
+    }
+    #botonesCarro{
+        font-size: larger;
+    }
+    
+    /*Contacto*/
+    #formContacto{
+        margin-left: 10%;
+        width: 80%;
+        margin-top: 48%;
+        margin-bottom: 48%;
+    }
+    #mainContacto{
+        height: 100%;
+    }
+    #reseñas{
+        display: none;
+    }
+    /*footer*/
+    footer ul{
+        display: flex;
+        margin-left: 33%;
+        flex-direction:column;
+        justify-content: space-between;
+        justify-items: center;
+    }
+    footer ul li{
+        width: auto;
+    }
+}
 
+@media (min-width: 516px) and (max-width: 1000px){
+    /*Inicio*/
+    #menu div h3 a{
+        margin-left: 0;
+        font-size: medium;
+        
+    }
+    #menu div h3{
+        text-align: center;
+        
+    }
+    #menu div{
+        width: 100%;
+    }
+    .introtienda{
+        margin: 0%;
+        width: 100%;
+        height: fit-content;
+        border-radius: 0%;
+        padding-top: 30px;
+        padding-left: 2%;
+        padding-right: 2%;
+        overflow: hidden;
+    }
+    .panelintroTienda{
+        height: auto;
+        flex-direction: row;
+        height: auto;
+        
+    }
+    #introTiendabackground{
+        height: auto;
+    }
+    #introTiendabackground .panelintroTienda .introtienda{
+        margin-top: 0px;
+        padding-top: 100px;
+        padding-left: 2%;
+        padding-right: 2%;
+        height: 300px;
+        margin-bottom: 0px;
+    }
+    /*footer*/
+    footer ul{
+        margin-top: 10px;
+        margin-left: 20%;
+        padding: 0%;
+        flex-direction: column;
+        justify-content: space-between;
     }
     footer{
         height: auto;
@@ -617,6 +730,16 @@ footer ul{
     }
     #bloqueCarro{
         margin: 0%;
+        height: fit-content;
+    }
+    .tarjetaProducto{
+        width: 80%;
+        margin-left: 10%;
+        font-size: 30px;
+        height: fit-content;
+    }
+    .elementosCarro{
+        width: 100%;
     }
     #totalCarro{
         height: 50px;
@@ -638,7 +761,20 @@ footer ul{
     #categorias ul li{
         margin-bottom: 5px;
     }
+    .cartaAmpliada {
+        position: relative;
+        margin-left: 0%;
+        width: 100%;
+        height: auto;
+        transform: translate(-50%, 0) scale(1);
+        z-index: 1;
+    }
     .botonAgregarCarro{
+        text-align: center;
+        font-size: 22px;
+        height: 80px;
+    }
+    .botonAmpliarCarta{
         text-align: center;
         font-size: 22px;
         height: 80px;
@@ -646,6 +782,10 @@ footer ul{
     .botonAgregarCarro p{
         margin-bottom: 13%;
     }
+    #botonesCarro{
+        font-size: larger;
+    }
+    
     /*Contacto*/
     #formContacto{
         margin-left: 10%;
@@ -657,11 +797,17 @@ footer ul{
         height: 100%;
     }
     #reseñas{
-        display: grid;
-        width: 100%;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        padding: 1%;
+        display: none;
     }
-
+    /*footer*/
+    footer ul{
+        display: flex;
+        margin-left: 0%;
+        flex-direction:row;
+        justify-content: space-around;
+        justify-items: center;
+    }
+    footer ul li{
+        width: auto;
+    }
 }
