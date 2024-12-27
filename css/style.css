@@ -43,9 +43,6 @@
     text-decoration:solid !important;
     list-style-type: disc;
 }
-.elementosCarro li::before{
-    content:"·";
-}
 
 #carrito{
     background-color: var(--colorsecundario);
@@ -82,11 +79,6 @@
     margin-left: 3%;
     grid-row: span 8;
     grid-column: span 2;
-}
-#bloqueCarro div{
-    display: flex;
-    height: 100%;
-    flex-direction: column;
 }
 #totalCarro{
     margin: 0%;
@@ -125,6 +117,29 @@
 }
 #botonPagar p{
     margin: 0%;
+}
+.textoElementoCarro{
+    margin: 0%;
+    height: auto !important;
+    display: flex;
+    flex-direction:row;
+    border-color: var(--colorsecundario);
+    border: 2px solid;
+    text-align: center;
+}
+.textoElementoCarro p{
+    font-size: 122%;
+}
+.botonEditarCantidadCarro{
+    width: 40px;
+    background-color: var(--colorsecundario);
+    color: var(--colorterceario);
+}
+#botonMenosCarro{
+    margin-left: auto;
+}
+.elementosCarro li{
+    display: flex;
 }
 
 
@@ -328,6 +343,23 @@ body{
     justify-content: center;
     gap: 2%;
 }
+.cartaAmpliada {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: auto;
+    transform: translate(-50%, -50%) scale(2);
+    z-index: 1;
+}
+
+.descripcionProducto{
+    display: none;
+}
+
+.cartaAmpliada .descripcionProducto{
+    display: block;
+  }
 .botonAmpliarCarta{
     margin-top: 10px;
     color: #000000;

@@ -1,214 +1,50 @@
 // no es obligatorio el uso de bootstrap
 
-const productos = [
-    {
-        nombre: "ryzen 3",
-        descripcion: `
-        •Modelo: Ryzen 5 5600G
-        •Nucleos: 6 nucleos
-        •Hilos: 12 hilos
-        •Frecuencia: 3.9ghz - 4.4ghz
-        •Igpu: si
-        •Socalo: AM4
-        •Memoria: ddr4
-        •TDP: 65
-        `,
-        precio: 300000,
-        categoria: "procesador",
-        imagen: "ryzen3.webp",
-    },
-    {
-        nombre: "ryzen 5",
-        descripcion: "",
-        precio: 500000,
-        categoria: "procesador",
-        imagen: "ryzen5.webp",
-    },
-    {
-        nombre: "ryzen 7",
-        descripcion: "",
-        precio: 700000,
-        categoria: "procesador",
-        imagen: "ryzen7.webp",
-    },
-    {
-        nombre: "ryzen 9",
-        descripcion: "",
-        precio: 900000,
-        categoria: "procesador",
-        imagen: "ryzen9.webp",
-    },
-    {
-        nombre: "rx 6800",
-        descripcion: "",
-        precio: 800000,
-        categoria: "gpu",
-        imagen: "rx6800.jpg",
-    },
-    {
-        nombre: "rx 6700",
-        descripcion: "",
-        precio: 650000,
-        categoria: "gpu",
-        imagen: "rx6700.webp",
-    },
-    {
-        nombre: "rx 6600",
-        descripcion: "",
-        precio: 500000,
-        categoria: "gpu",
-        imagen: "rx6600.webp",
-    },
-    {
-        nombre: "rx 6500",
-        descripcion: "",
-        precio: 320000,
-        categoria: "gpu",
-        
-        imagen: "rx6500.webp",
-    },
-    {
-        nombre: "rtx 4090",
-        descripcion: "",
-        precio: 2000000,
-        categoria: "gpu",
-        imagen: "rtx4090.webp",
-    },
-    {
-        nombre: "rtx 4080",
-        descripcion: "",
-        precio: 1300000,
-        categoria: "gpu",
-        imagen: "rtx4080.webp",
-    },
-    {
-        nombre: "rtx 4070",
-        descripcion: "",
-        precio: 1000000,
-        categoria: "gpu",
-        imagen: "rtx4070.webp",
-    },
-    {
-        nombre: "rtx 4060",
-        descripcion: "",
-        precio: 700000,
-        categoria: "gpu",
-        imagen: "rtx4060.webp",
-    },
-    {
-        nombre: "rtx 4050",
-        descripcion: "",
-        precio: 500000,
-        categoria: "gpu",
-        imagen: "rtx4050.jpg",
-    },
-    {
-        nombre: "intel core i9",
-        descripcion: "",
-        precio: 900000,
-        categoria: "procesador",
-        imagen: "i9.jpg",
-    },
-    {
-        nombre: "intel core i7",
-        descripcion: "",
-        precio: 500000,
-        categoria: "procesador",
-        imagen: "i7.webp",
-    },
-    {
-        nombre: "intel core i5",
-        descripcion: "",
-        precio: 300000,
-        categoria: "procesador",
-        imagen: "i5.webp",
-    },
-    {
-        nombre: "intel core i3",
-        descripcion: "",
-        precio: 120000,
-        categoria: "procesador",
-        imagen: "i3.webp",
-    },
-    {
-        nombre: "intel pentium",
-        descripcion: "",
-        precio: 70000,
-        categoria: "procesador",
-        imagen: "pentium.jpg",
-    },
-    {
-        nombre: "SSD Kingstone 1tb",
-        descripcion: "",
-        precio: 70000,
-        categoria: "SSD",
-        imagen: "SSDKingstone.jfif",
-    },
-    {
-        nombre: "SSD Kingstone 500gb",
-        descripcion: "",
-        precio: 50000,
-        categoria: "SSD",
-        
-        imagen: "SSDKingstone.jfif",
-    },
-    {
-        nombre: "SSD Kingstone 240gb",
-        descripcion: "",
-        precio: 30000,
-        categoria: "SSD",
-        imagen: "SSDKingstone.jfif",
-        descripcion: "",
-    },
-    {
-        nombre: "Disco Duro Seagate 2tb",
-        descripcion: "",
-        precio: 90000,
-        categoria: "HDD",
-        imagen: "seagate.webp",
-    },
-    {
-        nombre: "Disco Duro Seagate 1tb",
-        descripcion: "",
-        precio: 70000,
-        categoria: "HDD",
-        imagen: "seagate.webp",
-    },
-    {
-        nombre: "Disco Duro WD Blue 4tb",
-        descripcion: "",
-        precio: 120000,
-        categoria: "HDD",
-        imagen: "wdblue.jfif",
-    },
-    {
-        nombre: "Disco Duro WD Blue 1tb",
-        descripcion: "",
-        precio: 70000,
-        categoria: "HDD",
-        imagen: "wdblue.jfif",
-    },
-    {
-        nombre: "Disco Duro WD Blue 320gb",
-        descripcion: "",
-        precio: 20000,
-        categoria: "HDD",
-        imagen: "wdblue.jfif",
-    },
-]
+let productos = [];
 
-/* Implementacion de categorias */ 
+/* Implementacion de categorías */ 
+
+const totalCarrito = document.querySelector("#totalCarro");
 let pagina = 1;
-
-let productosSeleccionados = 0;
 let totalApagar = 0;
 
+// Carrito
+
+
 const checkboxes = document.querySelectorAll("input[name='categoriasCheckbox']");
+const botonSiguientePaginaTienda = document.querySelector("#botonPaginaSiguiente");
+const botonAnteriorPaginaTienda = document.querySelector("#botonPaginaAnterior");
+
+function añadirBotonesPagina(){
+    botonSiguientePaginaTienda.addEventListener("click", event =>{
+        if(contadorAñadidos > 15 ){
+            //hacer nada
+        }else{
+            pagina++;
+            botonAnteriorPaginaTienda.disabled = false;
+            if(pagina > productos.length / maximosElementosPagina){
+                botonSiguientePaginaTienda.disabled = true;
+            }
+        }
+        
+        iniciarTienda();
+    })
+    botonAnteriorPaginaTienda.addEventListener("click", event =>{
+        if(pagina > 1){
+            pagina--
+            botonSiguientePaginaTienda.disabled = false;
+            if(pagina == 1){
+                botonAnteriorPaginaTienda.disabled = true;
+            }
+        }
+        iniciarTienda();
+    })
+}
 
 // Agregar un event listener a cada checkbox
+
 let categoriasSeleccionadas = [];
 
-// Agregar evento a cada checkbox
 checkboxes.forEach((checkbox) => {
     checkbox.addEventListener("change", (event) => {
         const categoria = event.target.id.trim().toLowerCase();
@@ -221,7 +57,14 @@ checkboxes.forEach((checkbox) => {
             categoriasSeleccionadas = categoriasSeleccionadas.filter((cat) => cat !== categoria);
         }
         pagina = 1;
+        
         iniciarTienda();
+
+        botonAnteriorPaginaTienda.disabled = true;
+        botonSiguientePaginaTienda.disabled = true;
+        if(contadorAñadidos>=15){
+            botonSiguientePaginaTienda.disabled = false;
+        }
     });
 });
 
@@ -229,11 +72,8 @@ checkboxes.forEach((checkbox) => {
 /* generar tarjetas de productos */
 
 let productoshtml = "";
-const maximosElementosPagina = 14;
+const maximosElementosPagina = 14; // 15 tarjetas, se cuenta desde 0
 const contenedorProductos = document.getElementById("tienda")
-
-const botonSiguientePaginaTienda = document.querySelector("#botonPaginaSiguiente");
-const botonAnteriorPaginaTienda = document.querySelector("#botonPaginaAnterior");
 
 let tarjetasProductosAñadidas = [];
 let contadorAñadidos = 0
@@ -244,17 +84,18 @@ function generarTarjetasTienda(producto, numproducto) {
             // No hacer nada si no está en la página actual
         } else {
             productoshtml += `
-                <card class="tarjetaProducto">
+                <card class="tarjetaProducto" numProducto="${numproducto}">
                         <div class="imagen">
                             <p><img src="../img/${producto.imagen}" alt="${producto.nombre}"></p>
                         </div>
                         <div class="descripcion">
                             <p class="precio">$${producto.precio}</p>
                             <p>${producto.nombre}</p>
+                            <p class="descripcionProducto">${producto.descripcion}</p>
                         </div>
                         <div class="botonesTarjetaProducto">
-                            <button class="botonAmpliarCarta" data-index="${numproducto}">VER DESCRIPCION</button>
-                            <button class="botonAgregarCarro" data-index="${numproducto}">AÑADIR AL CARRO</button>
+                            <button class="botonAmpliarCarta" numProducto="${numproducto}">VER DESCRIPCION</button>
+                            <button class="botonAgregarCarro" numProducto="${numproducto}">AÑADIR AL CARRO</button>
                         </div>
                 </card>`;
             tarjetasProductosAñadidas[contadorAñadidos] = numproducto;
@@ -266,7 +107,217 @@ function generarTarjetasTienda(producto, numproducto) {
     
 }
 
+/* manejo del carrito */
+
+const zonaCarrito = document.querySelector(".elementosCarro");
+
+
+function cargarCarrito(){
+    try{
+        let carrito = JSON.parse(localStorage.getItem('carritoTiendaTech')) || [];
+        const textoTotalCarro = document.querySelector("#totalCarro");
+        zonaCarrito.innerHTML = [];
+        totalApagar = 0;
+        let index = 0;
+        carrito.forEach((elemento) => {
+            zonaCarrito.innerHTML += `<div class="textoElementoCarro"> <p>${elemento.nombre}  $${elemento.precio}
+              #${elemento.cantidad}</p><button class="botonEditarCantidadCarro" id="botonMenosCarro" data-index="${index}">-</button>
+               <button class="botonEditarCantidadCarro" id="botonMasCarro" data-index="${index}">+</button></div>`
+                totalApagar += elemento.precio * elemento.cantidad;
+               index++;
+            })
+    
+        textoTotalCarro.innerHTML = `Total a pagar $${totalApagar}`    
+        añadirMasMenosCarrito();
+    }catch(error){
+        console.log("error al cargar el carrito: "+error)
+    }
+    
+}
+
+function añadirProductoACarrito(idProducto){
+    try{
+        if (idProducto >= 0 && idProducto < productos.length){
+
+            let carrito = JSON.parse(localStorage.getItem('carritoTiendaTech')) || [];
+            let encontrado = false;
+            for (let i = 0; i < carrito.length; i++) {
+                if(carrito[i].nombre == productos[idProducto].nombre && carrito[i].precio == productos[idProducto].precio){
+                    carrito[i].cantidad++;
+                    encontrado = true;
+                }
+            }
+    
+            if(!encontrado){
+                carrito.push({
+                    nombre: productos[idProducto].nombre,
+                    precio: productos[idProducto].precio,
+                    cantidad : 1
+                });
+            }
+            encontrado = false;
+    
+            localStorage.setItem("carritoTiendaTech",JSON.stringify(carrito));
+    
+            console.log(carrito);
+    
+            cargarCarrito();
+            
+        }
+    }
+    catch(error){
+        console.log("error al añadir el producto "+idProducto+" al carrito: "+error )
+    }
+    
+}
+
+
+function añadirListenersCompra(){
+    try{
+        const botonesAñadirAlCarro = document.querySelectorAll(".botonAgregarCarro");
+        botonesAñadirAlCarro.forEach(boton => {
+            boton.addEventListener("click", (event) => {
+                console.log(boton.getAttribute("numproducto"));
+                añadirProductoACarrito(boton.getAttribute("numproducto"))
+    
+            });
+        });
+    }catch(error){
+        console.log("error al añadir listeners a los botones de compra: " + error);
+    }
+    
+}
+
+function agregarBotonesAmpliar(){
+    try{
+        const botonesAmpliar = document.querySelectorAll('.botonAmpliarCarta');
+        botonesAmpliar.forEach(boton => {
+            boton.addEventListener('click', () => {
+                const numProducto = boton.getAttribute('numProducto');
+                const tarjeta = document.querySelector(`.tarjetaProducto[numProducto="${numProducto}"]`);
+                tarjeta.classList.toggle('cartaAmpliada');
+            });
+        });
+    }catch(error){
+        console.log("Error al agregar botones para ampliar las tarjetas de productos : "+error)
+    }
+    
+}
+
+function comprarProductos(){
+    try{
+        alert("Productos comprados, gracias por su compra!!!");
+        eliminarTodosLosProductos();
+    }catch(error){
+        console.log("error al tratar de alertar al usuario de su compra : "+error)
+    }
+    
+}
+
+// logica para interactuar con los botones "+" y "-" del carrito
+
+function añadirListenersPagoBorrar(){
+    try{
+        const botonBorrar = document.querySelector("#botonBorrar");
+        const botonPagar = document.querySelector("#botonPagar");
+        botonBorrar.addEventListener("click", event => {
+            eliminarTodosLosProductos();
+        })
+        botonPagar.addEventListener("click", event => {
+            comprarProductos();
+        })
+    }catch(error){
+        console.log("Error al tratar de añadir listeners a los botones de PAGO y BORRAR: "+error)
+    }
+    
+}
+
+function eliminarUnProducto(id) {
+    try{
+        let carrito = JSON.parse(localStorage.getItem('carritoTiendaTech')) || [];
+        for (let index = 0; index < carrito.length; index++) {
+            if(index == id){
+                
+                if(carrito[index].cantidad> 1){
+                    carrito[index].cantidad--;
+                }else{
+                    carrito.splice(index, 1);
+                }
+                
+            }   
+        }
+        localStorage.setItem('carritoTiendaTech', JSON.stringify(carrito));
+        cargarCarrito();
+    }catch(error){
+        console.log("error al tratar de eliminar el producto "+id+" del carrito: "+ error);
+    }
+    
+}
+
+function eliminarTodosLosProductos(){
+    try{
+        let carrito = [];
+        localStorage.setItem('carritoTiendaTech', JSON.stringify(carrito));
+        cargarCarrito();
+    }catch(error){
+        console.log("error al intentar borrar el carro entero :" + error);
+    }
+    
+}
+
+
+function añadirUnProducto(id){
+    try{
+        let carrito = JSON.parse(localStorage.getItem('carritoTiendaTech')) || [];
+        for (let index = 0; index < carrito.length; index++) {
+            if(index == id){
+                carrito[index].cantidad++;
+            }
+        }
+        localStorage.setItem('carritoTiendaTech', JSON.stringify(carrito));
+        cargarCarrito();
+    }catch(error){
+        console.log("Error al añadir producto" + id +" al carrito :"+ error)
+    }
+    
+}
+
+function añadirMasMenosCarrito(){
+    try{
+        const botonesMenosCarrito = document.querySelectorAll("#botonMenosCarro");
+        const botonesMasCarrito = document.querySelectorAll("#botonMasCarro");
+        for (let i = 0; i < botonesMenosCarrito.length; i++) {
+            botonesMenosCarrito[i].addEventListener("click", (event) =>{
+                eliminarUnProducto(botonesMenosCarrito[i].dataset.index)
+            })
+        }
+        for (let i = 0; i < botonesMasCarrito.length; i++) {
+            botonesMasCarrito[i].addEventListener("click", (event) =>{
+                añadirUnProducto(botonesMasCarrito[i].dataset.index)
+            })
+        }
+    }catch(error){
+        console.log("Error en la creacion de los botones + y - de los productos del carrito: " + error)
+    }
+    
+}
+
+
 /* funcion para añadir las tarjetas que contienen los productos a la tienda */ 
+
+async function buscarProductos() {
+    try {
+        const response = await fetch('../productos.json');
+        if (!response.ok) {
+            throw new Error('Error en la solicitud: ' + response.status);
+        }
+        const data = await response.json();
+        productos = data;
+        iniciarTienda();
+    } catch (error) {
+        console.error('Error al realizar fetch:', error);
+    }
+}
 
 function iniciarTienda() {
     try{
@@ -275,7 +326,9 @@ function iniciarTienda() {
         contenedorProductos.innerHTML = "";
         productoshtml = "";
         let temp = 0;
-        productos.forEach((producto, index) => {
+
+        // por cada producto se verificara y generara en la tienda
+        productos.forEach((producto) => {
             if (categoriasSeleccionadas.includes(producto.categoria.trim().toLowerCase()) || categoriasSeleccionadas.length == 0) {
                 generarTarjetasTienda(producto, temp);
                 temp++;
@@ -283,133 +336,15 @@ function iniciarTienda() {
         });
         contenedorProductos.innerHTML = productoshtml;
         añadirListenersCompra();
+        cargarCarrito();
+        agregarBotonesAmpliar();
     }catch(error){
         console.error("Error al iniciar tienda: ", error)
     }
     
 }
 
-/* funcion para agregar listeners a los botones de comprar producto*/
 
-function añadirListenersCompra() {
-    try{
-        let botonesAgregar = document.querySelectorAll(".botonAgregarCarro");
-        let botonesAmpliar = document.querySelectorAll(".botonAmpliarCarta")
-
-        let listaCarrito = document.querySelector("#carrito div ul"); // obtiene un elemento ul
-        let totalCarrito = document.querySelector("#carrito div p");
-        const cartaProducto = document.querySelectorAll(".tarjetaProducto");
-        const descripcionCartaProducto = document.querySelectorAll(".tarjetaProducto .descripcion");
-
-        botonesAgregar.forEach((boton) => {
-            boton.addEventListener("click", function() {
-                const productoIndex = boton.getAttribute("data-index");
-                const producto = productos[productoIndex];
-    
-                totalApagar += producto.precio;
-                const elementoLista = document.createElement("li");
-                elementoLista.innerText = `${producto.nombre} $${producto.precio}`;
-                console.log(elementoLista);
-                listaCarrito.appendChild(elementoLista);
-                totalCarrito.innerText = "Total a pagar $" + totalApagar;
-                productosSeleccionados++;
-            });
-        });
-        botonesAmpliar.forEach((boton) =>{
-            let ampliado = false;
-            const productoIndex = boton.getAttribute("data-index");
-            const producto = productos[productoIndex];
-            boton.addEventListener("click",function(){
-                if(!ampliado){
-                    cartaProducto[productoIndex].classList.add("tarjetaProductoCompleta");
-                    descripcionCartaProducto[productoIndex].innerHTML += "<p>"+ producto.descripcion +"</p>";
-                    ampliado = true; 
-                }else{
-                    cartaProducto[productoIndex].classList.remove("tarjetaProductoCompleta");
-                    descripcionCartaProducto[productoIndex].innerHTML = `<p class="precio">$${producto.precio}</p>
-                    <p>${producto.nombre}</p>`;
-                    ampliado = false;
-                }
-                
-
-            })
-        });
-    }catch(error){
-        console.error("Error al añadir listeners a los botones de agregar al carro de las tarjetas de productos: ", error)
-    }
-    
-}
-
-/* manejo de paginas de tarjetas de productos*/ 
-
-
-function siguientePagina(){
-    try{
-        console.log("se clickeo siguiente pagina")
-        if(productos.length / maximosElementosPagina > pagina){
-            pagina++;
-            iniciarTienda();
-            botonAnteriorPaginaTienda.disabled = false;
-            botonAnteriorPaginaTienda.style.opacity = "1.0"
-            if(!(productos.length / maximosElementosPagina > pagina)){
-                botonSiguientePaginaTienda.disabled = true;
-                botonSiguientePaginaTienda.style.opacity = "0.5"
-            }
-        }
-    }catch(error){
-        console.error("Error al pasar a siguiente pagina ", error);
-    }
-    
-}
-function anteriorPagina(){
-    try{
-        if(pagina != 1){
-            pagina--;
-            iniciarTienda();
-            botonSiguientePaginaTienda.disabled = false;
-            botonSiguientePaginaTienda.style.opacity = "1.0"
-            if(pagina == 1){
-                botonAnteriorPaginaTienda.disabled = true;
-                botonAnteriorPaginaTienda.style.opacity = "0.5"
-            }
-        }
-    }catch{
-        console.error("Error al pasar a anterior pagina ", error);
-    }
-    
-}
-
-botonSiguientePaginaTienda.addEventListener("click",siguientePagina);
-botonAnteriorPaginaTienda.addEventListener("click",anteriorPagina);
-
-//agregar listener a boton borrar
-
-try{
-    const botonBorrar = document.querySelector("#botonBorrar");
-    function borrarElementosCarrito(){
-        for(let index = 0; index < productosSeleccionados; index++){
-            listaCarrito.innerHTML = "";
-            totalCarrito.innerHTML = "";
-            totalApagar = 0;
-        }
-    }
-    botonBorrar.addEventListener("click", borrarElementosCarrito);
-    
-    const botonComprar = document.querySelector("#botonPagar")
-    
-    function comprarProductos(){
-        borrarElementosCarrito();
-        alert("Productos Comprados");
-    }
-    
-    botonComprar.addEventListener("click", comprarProductos)
-}catch(error){
-    console.error("Error al asignar listeners a botones de borrar o pagar del carro", error);
-}
-
-
-iniciarTienda();
-
-
-
-
+buscarProductos();
+añadirListenersPagoBorrar();
+añadirBotonesPagina();
