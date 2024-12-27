@@ -1,4 +1,4 @@
-<p>Proyecto de Facundo Agustin Olivieri</p>
+
 <h1> Proyecto de Talento Tech</h1>
 <h2>Alumno</h2>
 <p>Facundo Agustin Olivieri</p>
