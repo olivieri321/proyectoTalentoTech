@@ -175,8 +175,6 @@ function añadirProductoACarrito(idProducto){
     
             localStorage.setItem("carritoTiendaTech",JSON.stringify(carrito));
     
-            console.log(carrito);
-    
             cargarCarrito();
             
         }
@@ -194,7 +192,6 @@ function añadirListenersCompra(){
         const botonesAñadirAlCarro = document.querySelectorAll(".botonAgregarCarro");
         botonesAñadirAlCarro.forEach(boton => {
             boton.addEventListener("click", (event) => {
-                console.log(boton.getAttribute("numproducto"));
                 añadirProductoACarrito(boton.getAttribute("numproducto"))
     
             });
