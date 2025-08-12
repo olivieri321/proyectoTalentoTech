@@ -1,6 +1,5 @@
 
-<h1> Proyecto de Talento Tech</h1>
-<h2>Alumno</h2>
+<h2>Autor</h2>
 <p>Facundo Agustin Olivieri</p>
 <h2>Descripcion</h2>
 <p>Mi proyecto esta enfocado en imitar una tienda de productos informaticos gamer, en el index se mostrarian los sponsors y una breve descripcion de la compania.
